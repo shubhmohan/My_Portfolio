@@ -81,7 +81,7 @@ nav a:hover::after {
   -webkit-text-fill-color: transparent;
 }
 
-/* BUTTONS - Cyberpunk Style */
+
 .btn {
   background: linear-gradient(135deg, #00f2ff, #0066ff);
   color: #000;
