@@ -137,20 +137,3 @@ input:focus, textarea:focus {
   border-color: #00f2ff;
   box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
 }
-
-/* DECORATIVE BLOBS - Tech Blue/Purple */
-.blob {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
-  top: -10%;
-  left: -5%;
-  z-index: -1;
-}
-
-.blob.two {
-  background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, transparent 70%);
-  top: 60%;
-  left: 70%;
-}
