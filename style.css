@@ -1,20 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
 * {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  /* Switched to a more tech-focused font */
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-/* BODY */
+/* BODY - Neural Grid Background */
 body {
-  background: #FFF0F6;
-  color: #4a4a4a;
+  background-color: #050505;
+  /* This creates the coordinate/grid plane look */
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #e0e0e0;
   overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* NAVBAR - Translucent Glassmorphism */
 nav {
-  background: #FFE6F0;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px); /* Blurred glass effect */
   display: flex;
   justify-content: center;
   gap: 32px;
@@ -22,13 +31,19 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 nav a {
   position: relative;
-  color: #C45C8A;
-  font-weight: 600;
+  color: #888;
+  font-weight: 500;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00f2ff; /* Cyan highlight */
 }
 
 nav a::after {
@@ -37,9 +52,9 @@ nav a::after {
   left: 0;
   bottom: -6px;
   width: 0%;
-  height: 3px;
-  background: #F7A1C4;
-  border-radius: 10px;
+  height: 2px;
+  background: #00f2ff;
+  box-shadow: 0 0 10px #00f2ff; /* Glow effect */
   transition: 0.3s;
 }
 
@@ -47,142 +62,98 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   text-align: center;
   padding: 120px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #C45C8A;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -2px;
 }
 
 .hero span {
-  color: #F7A1C4;
+  background: linear-gradient(90deg, #00f2ff, #7000ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Glow for the span text */
 }
 
-.hero p {
-  margin: 12px 0 26px;
-  color: #9b5f7c;
-}
-
-/* BUTTONS */
+/* BUTTONS - Cyberpunk Style */
 .btn {
-  background: #F7A1C4;
-  color: white;
+  background: linear-gradient(135deg, #00f2ff, #0066ff);
+  color: #000;
   padding: 14px 30px;
-  border-radius: 14px;
+  border-radius: 8px; /* Sharper edges look more technical */
   border: none;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
-  display: inline-block;
 }
 
 .btn:hover {
-  background: #FAD1E6;
-  color: #C45C8A;
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(247, 161, 196, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+  background: #ffffff;
 }
 
-.btn.small {
-  padding: 8px 18px;
-  font-size: 0.9rem;
-}
-
-/* SECTIONS */
-section {
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-h2 {
-  text-align: center;
-  color: #C45C8A;
-  margin-bottom: 30px;
-}
-
-/* CARDS */
+/* CARDS - Glassmorphism & Neural Nodes */
 .card {
-  background: #FFFAFD;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 26px;
-  box-shadow: 0 8px 20px rgba(247, 161, 196, 0.25);
-  transition: all 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card:hover {
-  transform: rotateX(5deg) rotateY(-5deg) scale(1.04);
-  box-shadow: 0 18px 40px rgba(247, 161, 196, 0.45);
+  border-color: #00f2ff;
+  background: rgba(0, 242, 255, 0.05);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-/* GRID */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 24px;
-}
 
-/* FORM */
+
+/* FORM FIELDS */
 input, textarea {
-  width: 100%;
-  padding: 14px;
+  width: 90%;
+  padding: 15px;
   margin: 10px 0;
-  border-radius: 12px;
-  border: 2px solid #FFD6E8;
-  background: #FFF5FA;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  
 }
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #F7A1C4;
+  border-color: #00f2ff;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
 }
 
-/* FOOTER */
-footer {
-  background: #FFE6F0;
-  text-align: center;
-  padding: 18px;
-  color: #C45C8A;
-}
-
-/* FLOATING BLOBS */
+/* DECORATIVE BLOBS - Tech Blue/Purple */
 .blob {
   position: fixed;
-  width: 240px;
-  height: 240px;
-  background: #FAD1E6;
-  border-radius: 50%;
-  filter: blur(60px);
-  top: 10%;
-  left: 5%;
-  animation: float 8s infinite alternate;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
   z-index: -1;
 }
 
 .blob.two {
-  background: #F7A1C4;
-  top: 65%;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, transparent 70%);
+  top: 60%;
   left: 70%;
-  animation-duration: 10s;
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-50px); }
-}
-
-/* SCROLL ANIMATION */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
 }
