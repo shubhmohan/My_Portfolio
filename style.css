@@ -7,10 +7,9 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* BODY - Neural Grid Background */
+
 body {
   background-color: #050505;
-  /* This creates the coordinate/grid plane look */
   background-image: 
     linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
@@ -19,10 +18,10 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR - Translucent Glassmorphism */
+
 nav {
   background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(12px); /* Blurred glass effect */
+  backdrop-filter: blur(12px); 
   display: flex;
   justify-content: center;
   gap: 32px;
@@ -42,7 +41,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #00f2ff; /* Cyan highlight */
+  color: #00f2ff; 
 }
 
 nav a::after {
@@ -53,7 +52,7 @@ nav a::after {
   width: 0%;
   height: 2px;
   background: #00f2ff;
-  box-shadow: 0 0 10px #00f2ff; /* Glow effect */
+  box-shadow: 0 0 10px #00f2ff;
   transition: 0.3s;
 }
 
@@ -61,7 +60,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* HERO SECTION */
+
 .hero {
   text-align: center;
   padding: 120px 20px;
