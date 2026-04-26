@@ -356,15 +356,22 @@ section { position: relative; z-index: 2; }
   display: flex; align-items: center; justify-content: center;
 }
 .avatar-hex {
-  width: 220px; height: 220px;
-  background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(123,47,255,0.2));
-  border: 2px solid var(--cyan);
+  width: 220px;
+  height: 220px;
+  background: var(--cyan); /* fallback color */
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: hexPulse 3s infinite;
-  
+  overflow: hidden; /* Ensures nothing spills out of the hex corners */
+}
+.avatar-hex img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover; /* This ensures the image fills the hex without stretching */
+  object-position: center; /* Centers the face/subject */
+  display: block;
 }
 @keyframes hexPulse {
   0%,100%{box-shadow:0 0 20px rgba(0,245,255,0.3)} 
